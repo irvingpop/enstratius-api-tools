@@ -49,7 +49,7 @@ import argparse
 from argparse import ArgumentParser
 import pprint
 import esid
-import resource_filter
+from enstratius_api_tools import resource_filter
 import sys,os
 import json
 

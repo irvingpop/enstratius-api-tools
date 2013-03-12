@@ -4,7 +4,7 @@
 from mixcoatl.infrastructure.snapshot import Snapshot
 from mixcoatl.admin.billing_code import BillingCode
 from prettytable import PrettyTable
-import resource_filter
+from enstratius_api_tools import resource_filter
 import esid
 import argparse
 import sys

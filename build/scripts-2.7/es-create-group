@@ -7,8 +7,8 @@ from mixcoatl.admin.user import User
 from prettytable import PrettyTable
 import argparse
 import pprint
-import esid
-import resource_filter
+from enstratius_api_tools import esid
+from enstratius_api_tools import resource_filter
 import sys
 
 def print_verbose(name,gid):

@@ -6,7 +6,7 @@ from prettytable import PrettyTable
 import argparse
 import pprint
 import esid
-import resource_filter
+from enstratius_api_tools import resource_filter
 import sys
 
 if __name__ == '__main__':

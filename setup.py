@@ -9,10 +9,9 @@ try:
 except ImportError:
     from distutils.core import setup
 
-requires = ['mixcoatl==0.2.6', 'prettytable==0.6.1']
+requires = ['mixcoatl==0.2.6', 'prettytable==0.6.1', 'argparse>=1.2.1']
 
-packages=['enstratius_api_tools.resource_filter',
-          'enstratius-api-tools.esid']
+packages=['enstratius_api_tools']
 
 setup(
     name='enstratius_api_tools',
@@ -21,7 +20,8 @@ setup(
     long_description=open('README.rst').read(),
     author='Greg Moselle',
     author_email='greg.moselle@enstratius.com',
-    url='https://github.com/enStratus/enstratius_api_tools',
+    url='https://pypi.python.org/pypi/enstratius_api_tools',
+    packages=packages,
     package_data={'': ['LICENSE', 'README.rst', 'requirements.txt']},
     package_dir={'enstratius_api_tools': 'enstratius_api_tools'},
     include_package_data=True,

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import resource_filter
+from enstratius_api_tools import resource_filter
 from mixcoatl.infrastructure.volume import Volume
 from prettytable import PrettyTable
 import argparse

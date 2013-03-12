@@ -2,7 +2,7 @@
 
 from mixcoatl.admin.account import Account
 from prettytable import PrettyTable
-import esid
+from enstratius_api_tools import esid
 import argparse
 import sys
 

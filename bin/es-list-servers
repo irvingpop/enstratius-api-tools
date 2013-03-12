@@ -3,7 +3,7 @@
 
 from mixcoatl.infrastructure.server import Server
 from prettytable import PrettyTable
-import resource_filter
+from enstratius_api_tools import resource_filter
 import argparse
 import esid
 import sys

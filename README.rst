@@ -1,16 +1,8 @@
 es-api-tools
 ============
 
-Philosophy
-~~~~~~~~~~
-
-See the `philosophy <https://enstratus.fogbugz.com/default.asp?W242>`_ from great master.
-
-List of Tools
-~~~~~~~~~~~~~
-
 Servers
--------
+~~~~~~~
 
 +----------------------------+---------------------------------------------+
 | Filename                   | Description                                 |
@@ -25,7 +17,7 @@ Servers
 +----------------------------+---------------------------------------------+
 
 Volumes and Snapshots
----------------------
+~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------+---------------------------------------------+
 | Filename                   | Description                                 |
@@ -40,7 +32,7 @@ Volumes and Snapshots
 +----------------------------+---------------------------------------------+
 
 Machine Images
---------------
+~~~~~~~~~~~~~~
 
 +----------------------------+---------------------------------------------+
 | Filename                   | Description                                 |
@@ -49,7 +41,7 @@ Machine Images
 +----------------------------+---------------------------------------------+
 
 Users and Groups
-----------------
+~~~~~~~~~~~~~~~~
 
 +----------------------------+---------------------------------------------+
 | Filename                   | Description                                 |
@@ -60,7 +52,7 @@ Users and Groups
 +----------------------------+---------------------------------------------+
 
 Etc
----
+~~~
 
 +----------------------------+---------------------------------------------+
 | Filename                   | Description                                 |
@@ -75,32 +67,27 @@ Etc
 +----------------------------+---------------------------------------------+
 
 Common modules
-~~~~~~~~~~~~~~
+--------------
 
 ``esid.py``
------------
-ID translation in enStratus API.
+~~~~~~~~~~~
+
+ID translation in Enstratius API.
 
 ``resource_filter.py``
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
+
 Useful when you search particular resources such as servers from a list of resources.
 
 Dependencies
-~~~~~~~~~~~~
+------------
 
-To make the tools work, you have to install dependent modules. Currently, it works with the latest version of mixcoatl that is in Github repository, not in pypi.
-
-.. code-block:: bash
-
-        sudo pip install prettytable
-
-        git clone https://someurl.to.mixcoatl/
-        sudo python setup.py install
+Dependencies should be automagically satisified.
 
 Environment Variables
-~~~~~~~~~~~~~~~~~~~~~
+---------------------
 
-enStratus API tools work with `enStratus REST API. <https://www.enstratus.com/page/1/API-Specifications.jsp>`_ Since the tools are dependent on `mixcoatl <https://github.com/enStratus/mixcoatl>`_, you have to set environment variables.
+Enstratius API tools work with `Enstratius REST API. <https://www.enstratius.com/page/1/API-Specifications.jsp>`_ Since the tools are dependent on `mixcoatl <https://github.com/Enstratius/mixcoatl>`_, you have to set environment variables.
 
 .. code-block:: bash
 
@@ -108,8 +95,9 @@ enStratus API tools work with `enStratus REST API. <https://www.enstratus.com/pa
         export ES_SECRET_KEY=12345mysecretkey67890
         unset ES_ENDPOINT
 
-If you are not in enStratus SaaS environment, you also need to configure ES_ENDPOINT. For instance, you need to set ES_ENDPOINT as below in development environment.
+If you are not in Enstratius SaaS environment, you also need to configure ES_ENDPOINT. For
+instance, you need to set ES_ENDPOINT as below in development environment.
 
 .. code-block:: bash
 
-        export ES_ENDPOINT=http://dev.api.enstratus.com:15000/api/enstratus/2012-06-15
+        export ES_ENDPOINT=http://dev.api.enstratius.com:15000/api/enstratus/2012-06-15

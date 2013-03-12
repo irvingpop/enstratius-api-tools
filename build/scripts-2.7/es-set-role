@@ -23,7 +23,7 @@ from prettytable import PrettyTable
 import argparse
 import pprint
 import esid
-import resource_filter
+from enstratius_api_tools import resource_filter
 import sys
 
 def set_one_account(group_id,role_id,account_id):
