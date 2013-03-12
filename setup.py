@@ -11,6 +11,9 @@ except ImportError:
 
 requires = ['mixcoatl==0.2.6', 'prettytable==0.6.1']
 
+packages=['enstratius_api_tools.resource_filter',
+          'enstratius-api-tools.esid']
+
 setup(
     name='enstratius_api_tools',
     version=enstratius_api_tools.__version__,
