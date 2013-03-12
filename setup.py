@@ -25,7 +25,7 @@ setup(
     package_data={'': ['LICENSE', 'README.rst', 'requirements.txt']},
     package_dir={'enstratius_api_tools': 'enstratius_api_tools'},
     include_package_data=True,
-    install_requires=['mixcoatl==0.2.6'],
+    install_requires=requires,
 		scripts=glob.glob(os.path.join('bin', '*')),
     license='Apache 2.0',
     zip_safe=False,
