@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>es-api-tools &mdash; enstratius-api-tools 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/solar.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/clear-default-text.js"></script>
+    <script type="text/javascript" src="_static/util-functions.js"></script>
+    <link rel="top" title="enstratius-api-tools 0.1 documentation" href="index.html" />
+    <link rel="prev" title="enstratius-api-tools" href="index.html" /><link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="_static/solarized-dark.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="enstratius-api-tools"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">enstratius-api-tools 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">es-api-tools</a><ul>
+<li><a class="reference internal" href="#philosophy">Philosophy</a></li>
+<li><a class="reference internal" href="#list-of-tools">List of Tools</a><ul>
+<li><a class="reference internal" href="#servers">Servers</a></li>
+<li><a class="reference internal" href="#volumes-and-snapshots">Volumes and Snapshots</a></li>
+<li><a class="reference internal" href="#machine-images">Machine Images</a></li>
+<li><a class="reference internal" href="#users-and-groups">Users and Groups</a></li>
+<li><a class="reference internal" href="#etc">Etc</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#common-modules">Common modules</a><ul>
+<li><a class="reference internal" href="#esid-py"><tt class="docutils literal"><span class="pre">esid.py</span></tt></a></li>
+<li><a class="reference internal" href="#resource-filter-py"><tt class="docutils literal"><span class="pre">resource_filter.py</span></tt></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">enstratius-api-tools</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/readme.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick Search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="es-api-tools">
+<h1>es-api-tools<a class="headerlink" href="#es-api-tools" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="philosophy">
+<h2>Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h2>
+<p>See the <a class="reference external" href="https://enstratus.fogbugz.com/default.asp?W242">philosophy</a> from great master.</p>
+</div>
+<div class="section" id="list-of-tools">
+<h2>List of Tools<a class="headerlink" href="#list-of-tools" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="servers">
+<h3>Servers<a class="headerlink" href="#servers" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Filename</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>es-list-servers.py</td>
+<td>List servers.</td>
+</tr>
+<tr class="row-odd"><td>es-create-server.py</td>
+<td>Create a new server from a machine image.(x)</td>
+</tr>
+<tr class="row-even"><td>es-pause-server.py</td>
+<td>Pause a server.</td>
+</tr>
+<tr class="row-odd"><td>es-terminate-server.py</td>
+<td>Terminate a server.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="volumes-and-snapshots">
+<h3>Volumes and Snapshots<a class="headerlink" href="#volumes-and-snapshots" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Filename</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>es-list-volumes.py</td>
+<td>List volumes.</td>
+</tr>
+<tr class="row-odd"><td>es-create-volume.py</td>
+<td>Create a new volume.</td>
+</tr>
+<tr class="row-even"><td>es-delete-volume.py</td>
+<td>Delete a volume.(x)</td>
+</tr>
+<tr class="row-odd"><td>es-list-snapshots.py</td>
+<td>List snapshots.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="machine-images">
+<h3>Machine Images<a class="headerlink" href="#machine-images" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Filename</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>es-list-machine-images.py</td>
+<td>List machine images.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="users-and-groups">
+<h3>Users and Groups<a class="headerlink" href="#users-and-groups" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Filename</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>es-list-users.py</td>
+<td>List users.</td>
+</tr>
+<tr class="row-odd"><td>es-list-groups.py</td>
+<td>List groups.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="etc">
+<h3>Etc<a class="headerlink" href="#etc" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="38%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Filename</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>es-list-regions.py</td>
+<td>List regions.</td>
+</tr>
+<tr class="row-odd"><td>es-list-datacenters.py</td>
+<td>List datacenters.</td>
+</tr>
+<tr class="row-even"><td>es-list-billing-codes.py</td>
+<td>List billing codes.</td>
+</tr>
+<tr class="row-odd"><td>es-list-jobs.py</td>
+<td>List status of jobs.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="common-modules">
+<h2>Common modules<a class="headerlink" href="#common-modules" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="esid-py">
+<h3><tt class="docutils literal"><span class="pre">esid.py</span></tt><a class="headerlink" href="#esid-py" title="Permalink to this headline">¶</a></h3>
+<p>ID translation in enStratus API.</p>
+</div>
+<div class="section" id="resource-filter-py">
+<h3><tt class="docutils literal"><span class="pre">resource_filter.py</span></tt><a class="headerlink" href="#resource-filter-py" title="Permalink to this headline">¶</a></h3>
+<p>Useful when you search particular resources such as servers from a list of resources.</p>
+</div>
+</div>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>To make the tools work, you have to install dependent modules. Currently, it works with the latest version of mixcoatl that is in Github repository, not in pypi.</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo pip install prettytable
+
+git clone https://someurl.to.mixcoatl/
+sudo python setup.py install
+</pre></div>
+</div>
+</div>
+<div class="section" id="environment-variables">
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<p>enStratus API tools work with <a class="reference external" href="https://www.enstratus.com/page/1/API-Specifications.jsp">enStratus REST API.</a> Since the tools are dependent on <a class="reference external" href="https://github.com/enStratus/mixcoatl">mixcoatl</a>, you have to set environment variables.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">ES_ACCESS_KEY</span><span class="o">=</span>abcmyaccesskeycba
+<span class="nb">export </span><span class="nv">ES_SECRET_KEY</span><span class="o">=</span>12345mysecretkey67890
+<span class="nb">unset </span>ES_ENDPOINT
+</pre></div>
+</div>
+<p>If you are not in enStratus SaaS environment, you also need to configure ES_ENDPOINT. For instance, you need to set ES_ENDPOINT as below in development environment.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">export </span><span class="nv">ES_ENDPOINT</span><span class="o">=</span>http://dev.api.enstratus.com:15000/api/enstratus/2012-06-15
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="enstratius-api-tools"
+             >previous</a> |</li>
+        <li><a href="index.html">enstratius-api-tools 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, Greg Moselle.
+    </div>
+  </body>
+</html>
