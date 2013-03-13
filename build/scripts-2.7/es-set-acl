@@ -48,7 +48,7 @@ from prettytable import PrettyTable
 import argparse
 from argparse import ArgumentParser
 import pprint
-import esid
+from enstratius_api_tools import esid
 from enstratius_api_tools import resource_filter
 import sys,os
 import json
@@ -60,10 +60,10 @@ def validate_input(update_file):
     """
     try:
         json.load(open(update_file))
-        print "Valid JSON"
+        #print "Valid JSON"
         return True
     except ValueError:
-        print "Invalid JSON"
+        print "Invalid JSON. Exiting."
         exit(-1)
         return False
 
@@ -87,7 +87,6 @@ def update_acl_from_file(role_id):
     if is_valid_file(parser,filename):
         f=open(filename,'r')
         json_object = json.load(f)
-        print json_object
 
     for value in json_object.values():
         for v in range(0,len(value)):

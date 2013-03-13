@@ -6,13 +6,14 @@
 enstratius-api-tools
 ====================
 
-Contents:
+.. include:: ../README.rst
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
+   :hidden:
    
-   readme
-   enstratius-api-tools
+   admin/admin
+   infrastructure/infrastructure
 
 Indices and tables
 ==================

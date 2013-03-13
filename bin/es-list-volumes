@@ -4,7 +4,7 @@ from enstratius_api_tools import resource_filter
 from mixcoatl.infrastructure.volume import Volume
 from prettytable import PrettyTable
 import argparse
-import esid
+from enstratius_api_tools import esid
 import sys
 
 if __name__ == '__main__':

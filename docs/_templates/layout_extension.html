@@ -1,0 +1,12 @@
+{% extends "!layout.html" %}
+
+{% block subrel %}
+    <a href="{{ pathto("admin/admin") }}">Admin</a>
+    <a href="{{ pathto("infrastructure/infrastructure") }}">Infrastructure</a>
+  {{ super() }}
+{% endblock %}
+
+{%- block relbaritems %} 
+  {%- include "searchbox.html" %} 
+  {{ super() }}
+{% endblock %}

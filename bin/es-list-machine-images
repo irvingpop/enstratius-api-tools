@@ -3,7 +3,7 @@
 from mixcoatl.infrastructure.machine_image import MachineImage
 from prettytable import PrettyTable
 import argparse
-import esid
+from enstratius_api_tools import esid
 import sys
 
 if __name__ == '__main__':
