@@ -3,6 +3,9 @@
 Admin
 -----
 
+Overview
+~~~~~~~~
+
 The utilities provided for here depend on `Mixcoatl <https://github.com/enStratus/mixcoatl>`_
 
 .. toctree::
@@ -15,8 +18,3 @@ The utilities provided for here depend on `Mixcoatl <https://github.com/enStratu
    es-set-acl
    es-set-role
    es-update-group
-
-Overview
-~~~~~~~~
-
-General information about the admin utilities.

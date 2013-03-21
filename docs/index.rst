@@ -9,7 +9,7 @@ enstratius-api-tools
 .. include:: ../README.rst
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :hidden:
    
    admin/admin

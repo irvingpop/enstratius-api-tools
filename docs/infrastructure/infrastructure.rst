@@ -3,16 +3,16 @@
 Infrastructure
 --------------
 
+Overview
+~~~~~~~~
+
+General information about the infrastructure utilities.
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    es-create-server
    es-create-volume
    es-delete-volume
    es-terminate-server
-
-Overview
-~~~~~~~~
-
-General information about the infrastructure utilities.
