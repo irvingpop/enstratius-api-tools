@@ -1,3 +1,9 @@
+Documentation
+-------------
+
+Please visit the `enstratius API tools <http://api-tools.enstratius.com>`_ documentation
+site.
+
 Dependencies
 ------------
 
@@ -17,7 +23,7 @@ Environment Variables
 
 Enstratius API tools work with `Enstratius REST API.
 <https://www.enstratius.com/page/1/API-Specifications.jsp>`_ Since the tools are dependent
-on `mixcoatl <https://github.com/Enstratius/mixcoatl>`_, you have to set environment
+on `mixcoatl <https://github.com/enstratus/mixcoatl>`_, you have to set environment
 variables.
 
 .. code-block:: bash
