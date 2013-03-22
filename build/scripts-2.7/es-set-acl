@@ -52,6 +52,9 @@ from enstratius_api_tools import esid
 from enstratius_api_tools import resource_filter
 import sys,os
 import json
+import requests
+import urllib2
+from urllib2 import Request, urlopen, URLError
 
 def validate_input(update_file):
     """
@@ -92,6 +95,41 @@ def update_acl_from_file(role_id):
         for v in range(0,len(value)):
             r.grant(role_id, value[v]['resourceType'], value[v]['action'], value[v]['qualifier'])
 
+def update_acl_from_url(role_id,url):
+    """Loop through the contents of the remotely specified ACL file and add the specified ACL."""
+    r=Role(role_id)
+
+    # Test to see if the file is reachable.
+    req = Request(url)
+    try:
+        response = urllib2.urlopen(req)
+    except URLError, e:
+        if hasattr(e, 'reason'):
+            print 'Failed to locate file.'
+            print 'Reason: ', e.reason
+        elif hasattr(e, 'code'):
+            print 'The server couldn\'t fulfill the request.'
+            print 'Error code: ', e.code
+    else:
+        # everything is fine
+        response = urllib2.urlopen(url)
+        data = response.read()
+
+        try:
+            json.loads(data)
+        except ValueError:
+            print ""
+            print "The file does not appear to be valid JSON. Please check your JSON syntax."
+            print "Exiting for safety."
+            print ""
+            sys.exit(1)
+        else:
+            json.loads(data)
+            json_object = json.loads(data) 
+            for value in json_object.values():
+                for v in range(0,len(value)):
+                    r.grant(role_id, value[v]['resourceType'], value[v]['action'], value[v]['qualifier'])
+
 def update_acl(role_id,resource,action,qualifier):
     """Add this single rule."""
     r=Role(role_id)
@@ -104,8 +142,10 @@ if __name__ == '__main__':
     parser.add_argument('--action', '-a', help='ACL action')
     parser.add_argument('--resource', '-R', help='ACL resource')
     parser.add_argument('--qualifier', '-q', help='ACL qualifier')
-    parser.add_argument("-i", dest="filename", required=False,
+    parser.add_argument('-i', dest="filename", required=False,
         help="input file for setting role ACL", metavar="FILE")
+    parser.add_argument('--url','-u', dest="url", required=False,
+        help="specify a remote file for setting acl ex: http://distsite/roles/standard_user.json", metavar="FILE")
 
     cmd_args = parser.parse_args()
 
@@ -114,6 +154,11 @@ if __name__ == '__main__':
     action=cmd_args.action
     qualifier=cmd_args.qualifier
     filename=cmd_args.filename
+    url=cmd_args.url
+
+    if cmd_args.url and cmd_args.role_id:
+        update_acl_from_url(role_id,url)
+        sys.exit(0)
 
     # Load from file specified by -i
     if cmd_args.filename and cmd_args.role_id:
