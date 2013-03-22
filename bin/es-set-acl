@@ -115,17 +115,20 @@ def update_acl_from_url(role_id,url):
         response = urllib2.urlopen(url)
         data = response.read()
 
-        if json.loads(data):
-            #print "Valid JSON"
+        try:
+            json.loads(data)
+        except ValueError:
+            print ""
+            print "The file does not appear to be valid JSON. Please check your JSON syntax."
+            print "Exiting for safety."
+            print ""
+            sys.exit(1)
+        else:
+            json.loads(data)
             json_object = json.loads(data) 
             for value in json_object.values():
                 for v in range(0,len(value)):
                     r.grant(role_id, value[v]['resourceType'], value[v]['action'], value[v]['qualifier'])
-        else:
-           print "The file does not appear to be valid JSON. Please check your JSON syntax."
-           print "Exiting."
-           sys.exit(1)
-
 
 def update_acl(role_id,resource,action,qualifier):
     """Add this single rule."""
