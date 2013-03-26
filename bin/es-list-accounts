@@ -2,9 +2,7 @@
 
 from mixcoatl.admin.account import Account
 from prettytable import PrettyTable
-from enstratius_api_tools import esid
 import argparse
-import sys
 
 if __name__ == '__main__':
     """ List accounts. Right now just returns the ID and name of the account"""
