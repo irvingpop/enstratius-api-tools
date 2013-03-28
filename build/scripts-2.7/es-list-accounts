@@ -20,7 +20,8 @@ if __name__ == '__main__':
 
     numAccount=len(a)
 
-    print a
-    #print "%-15s %-30s" % ('Account ID', 'Account Name')
-    #for index, object in enumerate(a):
-    #    returnId(object)
+    print "" 
+    print "%-15s %-30s\n" % ('Account ID', 'Account Name')
+    for index, object in enumerate(a):
+        returnId(object)
+    print "" 
