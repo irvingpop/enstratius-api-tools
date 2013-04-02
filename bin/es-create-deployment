@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 
-# This script will now return the name of the deployment being created, and the ID
+# This script will return the job of the request to create the deployment(s).
 
 from mixcoatl.automation.deployment import Deployment
+from mixcoatl.automation.deployment import Tiers
 from prettytable import PrettyTable
 import argparse
 import pprint
@@ -65,7 +66,7 @@ if __name__ == '__main__':
     parser.add_argument('--name', '-n', help='The name of the deployment.')
     parser.add_argument('--description', '-d', help='The description of the deployment.')
     parser.add_argument('--region', '-r', help='The default region of the deployment.')
-    parser.add_argument('--budgetid', '-b', help='The region of the deployment.')
+    parser.add_argument('--budgetid', '-b', help='The billing code for the deployment.')
     parser.add_argument('-i', dest="filename", required=False,
         help="Input file for creating a deployment", metavar="FILE")
     parser.add_argument('--verbose', '-v', action='store_true', default=False, help='Print out verbose information about the deployment creation.')
