@@ -16,7 +16,10 @@ if __name__ == '__main__':
 
     if cmd_args.job_id:
         job=Job(cmd_args.job_id)
-        print job.message
+        if hasattr(job, 'message'):
+            print job.message
+        else:
+            print "Job has no message."
 
     else:
         job_table = PrettyTable(["Description", "Job ID", "Status", "Start Date", "End Date", "Message"])
