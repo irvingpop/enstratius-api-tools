@@ -12,7 +12,7 @@ nosetests.xml
 pylint.log
 run.py
 *.egg-info
-build/
+build/*
 .autonose-depends.pickle
 dist/
 docs/_build/
