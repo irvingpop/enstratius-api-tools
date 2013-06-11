@@ -134,7 +134,8 @@ if __name__ == '__main__':
         create_tier_from_file()
         sys.exit(0)
 
-    if name is None or description is None or budgetid is None or deploymentId is None breach_period is None or cooldown_period is None or lower_cpu_threshold is None or upper_cpu_threshold is None or lower_ram_threshold is None or upper_ram_threshold is None:
+    if name is None or description is None or budgetid is None or deploymentId is None or breach_period is None or cooldown_period is None or lower_cpu_threshold is None or upper_cpu_threshold is None or lower_ram_threshold is None or upper_ram_threshold is None:
+
         parser.print_help()
         sys.exit(1)
 
@@ -147,8 +148,8 @@ if __name__ == '__main__':
     new_tier.minimum_servers = minimum_servers 
     new_tier.maximum_servers = maximum_servers 
     new_tier.breach_increment = breach_increment
-    new_tier.breach_period = breach_period
-    new_tier.cooldown_period = cooldown_period
+    new_tier.breach_period_in_minutes = breach_period
+    new_tier.cooldown_period_in_minutes = cooldown_period
     new_tier.lower_cpu_threshold = lower_cpu_threshold 
     new_tier.upper_cpu_threshold = upper_cpu_threshold 
     new_tier.lower_ram_threshold = lower_ram_threshold 
