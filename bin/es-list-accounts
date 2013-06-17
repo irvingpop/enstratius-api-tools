@@ -2,26 +2,23 @@
 
 from mixcoatl.admin.account import Account
 from prettytable import PrettyTable
-from enstratius_api_tools import esid
 import argparse
-import sys
-
-def returnId(account):
-    print "%-15d %-30s" % (account.account_id, account.name)
 
 if __name__ == '__main__':
     """ List accounts. Right now just returns the ID and name of the account"""
     parser = argparse.ArgumentParser()
+    parser.add_argument("--verbose", "-v", help="Produce verbose output", action="store_true")
+    cmd_args = parser.parse_args()
 
-    a=Account().all()
-
+    accounts = Account.all()
     # This is expensive as hell, but it's the only way to get a list of accounts right now
     # if you're using a system/customer API key.
 
-    numAccount=len(a)
-
-    print "" 
-    print "%-15s %-30s\n" % ('Account ID', 'Account Name')
-    for index, object in enumerate(a):
-        returnId(object)
-    print "" 
+    if cmd_args.verbose:
+        for account in accounts:
+            account.pprint()
+    else:
+        account_table = PrettyTable(["Account ID", "Account Name", "Default Budget", "Status"])
+        for account in accounts:
+            account_table.add_row([account.account_id, account.name, account.default_budget, account.status])
+        print(account_table)
