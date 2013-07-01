@@ -6,16 +6,20 @@ import sys
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--serverid', '-s' type=int, help='Server ID')
+    parser.add_argument('--serverid', '-s', type=int, help='Server ID')
     parser.add_argument('--reason', '-r', help='The reason for terminating the server.')
 
     cmd_args = parser.parse_args()
 
     server = Server(cmd_args.serverid)
-    result = server.destroy(reason=cmd_args.reason)
+    #result = server.destroy(reason=cmd_args.reason)
+    if cmd_args.reason:
+        result = server.destroy(reason=cmd_args.reason)
+    else:
+        result = server.destroy()
 
-    if result is True:
-        print("Terminating the server.")
+    if result['jobs'][0]['jobId']:
+        print result['jobs'][0]['jobId']
     else:
         print("Failed to terminate the server.")
         sys.exit(1)
