@@ -13,11 +13,13 @@ if __name__ == '__main__':
     parser.add_argument('--name', '-n', help='Server Name')
     parser.add_argument('--budgetid', '-b', help='Budget ID')
     parser.add_argument('--keypair', '-k', help='Keypair Name')
+    parser.add_argument('--vlan', '-v', help='VLAN')
 
     cmd_args = parser.parse_args()
 
     if (cmd_args.productid is None or cmd_args.machineimage is None or
-        cmd_args.name is None or cmd_args.datacenter is None or cmd_args.description is None):
+        cmd_args.name is None or cmd_args.datacenter is None or 
+        cmd_args.description is None):
         parser.print_help()
         sys.exit(1)
 
@@ -27,6 +29,8 @@ if __name__ == '__main__':
     new_server.data_center = cmd_args.datacenter
     new_server.description = cmd_args.description
     new_server.name = cmd_args.name
+    new_server.vlan = cmd_args.vlan
+
     if cmd_args.budgetid is not None:
         new_server.budget = cmd_args.budgetid
     new_server.keypair = cmd_args.keypair
