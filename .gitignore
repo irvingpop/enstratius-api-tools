@@ -5,7 +5,7 @@
 *.pyc
 *.swp
 .coverage
-.idea
+.idea/*
 coverage.xml
 *.iml
 nosetests.xml
