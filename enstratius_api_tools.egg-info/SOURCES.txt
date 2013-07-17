@@ -1,9 +1,12 @@
 README.rst
 setup.cfg
 setup.py
+bin/es-create-deployment
 bin/es-create-group
+bin/es-create-launch-config
 bin/es-create-role
 bin/es-create-server
+bin/es-create-tier
 bin/es-create-volume
 bin/es-delete-volume
 bin/es-list-accounts
