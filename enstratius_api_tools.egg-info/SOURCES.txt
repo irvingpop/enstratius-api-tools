@@ -5,6 +5,7 @@ bin/es-create-group
 bin/es-create-role
 bin/es-create-server
 bin/es-create-volume
+bin/es-delete-group
 bin/es-delete-volume
 bin/es-list-accounts
 bin/es-list-billing-codes
@@ -13,6 +14,7 @@ bin/es-list-groups
 bin/es-list-jobs
 bin/es-list-machine-images
 bin/es-list-regions
+bin/es-list-server-products
 bin/es-list-servers
 bin/es-list-snapshots
 bin/es-list-users
