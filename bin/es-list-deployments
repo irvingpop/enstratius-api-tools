@@ -2,7 +2,6 @@
 
 from mixcoatl.automation.deployment import Deployment
 from prettytable import PrettyTable
-from enstratius_api_tools import resource_filter
 import argparse
 import sys
 
