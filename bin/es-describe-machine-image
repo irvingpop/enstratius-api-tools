@@ -29,13 +29,12 @@ if __name__ == '__main__':
         m_table.add_row(["Architecture", m.architecture])
         m_table.add_row(["Region ID", m.region['region_id']])
         m_table.add_row(["Budget ID", m.budget])
-        m_table.add_row(["Owning User ID",
-                         m.owning_user['user_id'] if hasattr(m, 'owning_user') else None])
+        m_table.add_row(["Owning User ID", m.owning_user['user_id'] if hasattr(m, 'owning_user') else None])
         if hasattr(m,'owning_groups'):
             for group in m.owning_groups:
                 m_table.add_row(["Owning Group ID", group['group_id']])
         else:
-                m_table.add_row(["Owning Group ID", None])
+            m_table.add_row(["Owning Group ID", None])
         m_table.add_row(["Description", m.description])
         m_table.add_row(["Agent Version", m.agent_version if hasattr(m,'agent_version') else None])
         m_table.add_row(["Status", m.status])
