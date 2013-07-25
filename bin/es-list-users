@@ -18,12 +18,12 @@ if __name__ == '__main__':
         for user in users:
             user.pprint()
     else:
-        user_table = PrettyTable(["User ID", "Last Name", "First Name", "Email", "Groups"])
+        user_table = PrettyTable(["User ID", "VM Login ID", "Last Name", "First Name", "Email", "Groups"])
         for user in users:
             group_list = []
             if hasattr(user, 'groups'):
                 for group in user.groups:
                     group_list.append(group['name'])
-            user_table.add_row([user.vm_login_id, user.family_name, user.given_name,
+            user_table.add_row([user.user_id, user.vm_login_id, user.family_name, user.given_name,
                                 user.email, "\n".join(group_list)])
         print(user_table)
