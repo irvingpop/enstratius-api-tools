@@ -30,7 +30,11 @@ if __name__ == '__main__':
         deployment_table.add_row(["Budget ID", d.budget])
         deployment_table.add_row(["Owning User Name", d.owning_user['alpha_name']])
         deployment_table.add_row(["Owning User Email", d.owning_user['email']])
-        deployment_table.add_row(["Owning Group Name", d.owning_groups[0]['name']])
+        if hasattr(d, 'owning_groups'):
+            for owning_group in d.owning_groups:
+                deployment_table.add_row(["Owning Group Name", owning_group['name']])
+        else:
+            deployment_table.add_row(["Owning Group Name", None])
         deployment_table.add_row(["Creation Timestamp", d.creation_timestamp])
         deployment_table.add_row(["Description", d.description])
         deployment_table.add_row(["Status", d.status])
