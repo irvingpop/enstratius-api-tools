@@ -1,0 +1,58 @@
+#!/usr/bin/env python
+
+# Creates a user
+
+from mixcoatl.admin.user import User
+from prettytable import PrettyTable
+import argparse
+import pprint
+from enstratius_api_tools import esid
+from enstratius_api_tools import resource_filter
+import sys
+
+def print_verbose(name,rid):
+    print name, rid
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--account', '-a', help='Account ID')
+    parser.add_argument('--given_name', '-f', help='Given (first) name.')
+    parser.add_argument('--family_name', '-l', help='Family (last) name.')
+    parser.add_argument('--email', '-e', help='email address')
+    parser.add_argument('--groups', '-g', help='Group (just one for now)')
+    parser.add_argument('--billing_codes', '-b', help='billing_codes (just one for now)')
+    parser.add_argument('--verbose', '-v', action='store_true', default=False, help='Print out verbose information '
+                                                                                    'about the user creation.')
+
+    cmd_args = parser.parse_args()
+
+    if (cmd_args.given_name is None or cmd_args.family_name is None or
+    cmd_args.email is None or cmd_args.billing_codes is None):
+        parser.print_help()
+        sys.exit(1)
+
+    account=cmd_args.account
+    given_name=cmd_args.given_name
+    family_name=cmd_args.family_name
+    email=cmd_args.email
+    billing_codes=cmd_args.billing_codes
+    groups=cmd_args.groups
+
+    print account, given_name, family_name, email, billing_codes, groups
+
+    u = User()
+
+    u.account = account
+    u.given_name = given_name
+    u.family_name = family_name
+    u.email = email
+    u.billing_codes = billing_codes
+    u.groups = groups
+
+
+    result = u.create()
+
+    #if (cmd_args.verbose):
+    #    print_verbose(cmd_args.name, result['roles'][0]['roleId'])
+    #else:
+    #    print result['roles'][0]['roleId']
