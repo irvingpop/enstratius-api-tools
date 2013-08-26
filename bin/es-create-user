@@ -38,8 +38,6 @@ if __name__ == '__main__':
     billing_codes=cmd_args.billing_codes
     groups=cmd_args.groups
 
-    print account, given_name, family_name, email, billing_codes, groups
-
     u = User()
 
     u.account = account
@@ -51,8 +49,3 @@ if __name__ == '__main__':
 
 
     result = u.create()
-
-    #if (cmd_args.verbose):
-    #    print_verbose(cmd_args.name, result['roles'][0]['roleId'])
-    #else:
-    #    print result['roles'][0]['roleId']
