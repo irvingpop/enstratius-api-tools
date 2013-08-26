@@ -1,1 +1,1 @@
-mixcoatl==0.2.6
+mixcoatl==0.2.8
