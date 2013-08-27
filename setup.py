@@ -9,7 +9,7 @@ try:
 except ImportError:
     from distutils.core import setup
 
-requires = ['mixcoatl==0.2.6', 'prettytable==0.6.1', 'argparse>=1.2.1']
+requires = ['mixcoatl==0.2.8', 'prettytable==0.6.1', 'argparse>=1.2.1']
 
 packages=['enstratius_api_tools']
 
