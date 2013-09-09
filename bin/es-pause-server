@@ -13,8 +13,8 @@ if __name__ == '__main__':
     server = Server(cmd_args.serverid)
     result = server.pause()
 
-    if result is True:
-        print("Pausing the server.")
-    else:
-        print("Failed to pause the server.")
+    if isinstance(result, dict):
+        print(result['jobs'][0]['jobId'])
+    elif isinstance(result, unicode):
+        print(result)
         sys.exit(1)
