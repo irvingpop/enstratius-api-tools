@@ -35,4 +35,6 @@ if __name__ == '__main__':
         new_server.budget = cmd_args.budgetid
     new_server.keypair = cmd_args.keypair
 
-    new_server.launch()
+    result = new_server.launch()
+
+    print(result)
