@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# Terminates a server.
+# Returns Job ID.
 
 from mixcoatl.infrastructure.server import Server
 import argparse
@@ -26,11 +28,8 @@ if __name__ == '__main__':
     else:
         result = server.destroy()
 
-    if result:
-      print "Server", cmd_args.serverid, "terminated."
-    else:
-      if result['jobs'][0]['jobId']:
+    if result['jobs'][0]['jobId']:
         print result['jobs'][0]['jobId']
-      else:
+    else:
         print("Failed to terminate the server.")
         sys.exit(1)

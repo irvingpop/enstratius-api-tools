@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# Creates a volume.
+# Returns Job ID.
 
 from mixcoatl.infrastructure.volume import Volume
 from enstratius_api_tools import esid
@@ -35,8 +37,4 @@ if __name__ == '__main__':
 
     result = new_volume.create()
 
-    if result.status == 'RUNNING':
-        print("Creating the volume. Job ID: %s" % result.job_id)
-    else:
-        print("Failed to create the volume.")
-        sys.exit(1)
+    print(result.job_id)
