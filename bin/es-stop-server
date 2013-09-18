@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Pauses a server. Pausing server is not supported in some clouds such as AWS.
+# Stops a server.
 # Returns Job ID.
 
 from mixcoatl.infrastructure.server import Server
@@ -13,7 +13,7 @@ if __name__ == '__main__':
     cmd_args = parser.parse_args()
 
     server = Server(cmd_args.serverid)
-    result = server.pause()
+    result = server.stop()
 
     if isinstance(result, dict):
         print(result['jobs'][0]['jobId'])
