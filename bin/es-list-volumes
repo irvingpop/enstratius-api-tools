@@ -49,10 +49,10 @@ if __name__ == '__main__':
         for volume in volumes:
             volume.pprint()
     else:
-        volume_table = PrettyTable(["Zone", "Volume ID", "Provider ID", "Volume Name", "Current Server",
+        volume_table = PrettyTable(["Volume ID", "Provider ID", "Zone", "Volume Name", "Current Server",
                                     "Size", "Owner", "Status"])
         for volume in volumes:
-            volume_table.add_row([volume.data_center['name'], volume.volume_id, volume.provider_id, volume.name,
+            volume_table.add_row([volume.volume_id, volume.provider_id, volume.data_center['name'], volume.name,
                                   volume.server['name'] if hasattr(volume, 'server') else None, volume.size_in_gb,
                                   volume.owning_user['alpha_name'] if hasattr(volume, 'owning_user') else None,
                                   volume.status])
