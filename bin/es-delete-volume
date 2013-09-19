@@ -1,5 +1,6 @@
 #!/usr/bin/env python
-# This script doesn't work since mixcoatl's destroy function hasn't been implemented yet.
+# Deletes a volume.
+# API does not return Job ID.
 
 from mixcoatl.infrastructure.volume import Volume
 import argparse
