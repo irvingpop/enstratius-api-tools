@@ -41,6 +41,10 @@ if __name__ == '__main__':
     if cmd_args.budgetname is not None:
         snapshots = resource_filter.get_snapshots(snapshots, budget_id=esid.get_budget_id(cmd_args.budgetname))
 
+    if snapshots is None:
+        print("There are no snapshots.")
+        sys.exit(1)
+
     if cmd_args.verbose:
         for snapshot in snapshots:
             snapshot.pprint()
