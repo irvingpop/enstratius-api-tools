@@ -9,8 +9,9 @@ import sys
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--budgetid', '-b', type=int, help='Budget ID.')
-    parser.add_argument('--budgetname', '-B', help='Budget name.')
+    budget_group = parser.add_mutually_exclusive_group(required=True)
+    budget_group.add_argument('--budgetid', '-b', type=int, help='Budget ID.')
+    budget_group.add_argument('--budgetname', '-B', help='Budget name.')
     parser.add_argument('--datacenter', '-d', type=int, help='Data Center ID in which to create the volume.')
     parser.add_argument('--description', '-D', help='The description of the volume.')
     parser.add_argument('--name', '-n', help='The name of the volume.')
