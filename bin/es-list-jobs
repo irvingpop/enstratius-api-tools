@@ -22,7 +22,7 @@ if __name__ == '__main__':
             print "Job has no message."
 
     else:
-        job_table = PrettyTable(["Description", "Job ID", "Status", "Start Date", "End Date", "Message"])
+        job_table = PrettyTable(["Job ID", "Description", "Status", "Start Date", "End Date", "Message"])
         job_table.align['Description'] = 'l'
 
         for job in all_jobs:
@@ -34,6 +34,6 @@ if __name__ == '__main__':
                 message = job.message
             else:
                 message = None
-            job_table.add_row([job.description, job.job_id, job.status, job.start_date, end_date, message])
+            job_table.add_row([job.job_id, job.description, job.status, job.start_date, end_date, message])
 
         print(job_table)
