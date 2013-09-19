@@ -13,7 +13,7 @@ def get_servers(servers, **kwargs):
     :returns: a list of filtered servers.
     :rtype: list
     """
-    filtered_servers = None
+    filtered_servers = servers
 
     if kwargs.has_key('account_user_id') and kwargs['account_user_id'] is not None:
         filtered_servers = [server for server in servers if hasattr(server, 'owning_user') and
@@ -52,7 +52,7 @@ def get_snapshots(snapshots, **kwargs):
     :returns: a list of filtered snapshots.
     :rtype: list
     """
-    filtered_snapshots = None
+    filtered_snapshots = snapshots
 
     if kwargs.has_key('group_id') and kwargs['group_id'] is not None:
         filtered_snapshots = [snapshot for snapshot in snapshots if hasattr(snapshot, 'owning_groups')
@@ -79,7 +79,7 @@ def get_volumes(volumes, **kwargs):
     :returns: a list of filtered volumes.
     :rtype: list
     """
-    filtered_volumes = None
+    filtered_volumes = volumes
 
     if kwargs.has_key('vm_login_id') and kwargs['vm_login_id'] is not None:
         filtered_volumes = [volume for volume in volumes if hasattr(volume, 'owning_user') and
@@ -116,7 +116,7 @@ def get_user(users, **kwargs):
     :returns: a list of filtered users.
     :rtype: list
     """
-    selected_user = None
+    selected_user = users
 
     if kwargs.has_key('vm_login_id') and kwargs['vm_login_id'] is not None:
         for user in users:
