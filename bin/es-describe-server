@@ -28,7 +28,10 @@ if __name__ == '__main__':
         server_table.add_row(["Machine Image Name", s.machine_image['name']])
         server_table.add_row(["Architecture", s.architecture])
         server_table.add_row(["Product Size", s.provider_product_id])
-        server_table.add_row(["Public IP Address", s.public_ip_address])
+        if hasattr(s,'public_ip_address'):
+            server_table.add_row(["Public IP Address", s.public_ip_address])
+        else:
+            server_table.add_row(["Public IP Address", None])
         if hasattr(s,'private_ip_addresses'):
             for private_ip_address in s.private_ip_addresses:
                 server_table.add_row(["Private IP Address", private_ip_address])
